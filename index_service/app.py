@@ -2,12 +2,13 @@ from flask import Flask, request, jsonify
 import requests
 import numpy as np
 import json
+import os
 import joblib
 
-CLUSTER_ID = 3
-index = joblib.load(f'indices/clust_{CLUSTER_ID}/index')
+CLUSTER_ID = os.environ['CLUSTER_ID']
+index = joblib.load(f'/indices/clust_{CLUSTER_ID}/index')
 
-with open(f'indices/clust_{CLUSTER_ID}/sentences.json') as f:
+with open(f'/indices/clust_{CLUSTER_ID}/sentences.json') as f:
     raw_sentences = json.load(f)
 
 app = Flask(__name__)

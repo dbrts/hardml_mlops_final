@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 import requests
+import json
 import numpy as np
 
 # Загружаем индексы кластеров
@@ -36,7 +37,7 @@ def get_data():
 
         resp = json.loads(
             requests.post(
-                f'http://host.docker.internal:500{input_cluster}/get_best_from_k',
+                f'http://host.docker.internal:1400{input_cluster}/get_best_from_k',
                 json={'emb':input_emb.tolist() }
             ).text)
 
