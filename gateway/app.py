@@ -3,7 +3,8 @@ import requests
 import numpy as np
 
 # Загружаем индексы кластеров
-clust_centers_m = np.load('../dgs/dg_1/clust_centers.npy')
+# Нужно задать абсолютный путь к центрам кластеров
+clust_centers_m = np.load('/indices/clust_centers.npy')
 app = Flask(__name__)
 
 # Параметры где поднят tensorflow embedding server
