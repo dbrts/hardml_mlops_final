@@ -4,7 +4,6 @@ import json
 import numpy as np
 
 # Загружаем индексы кластеров
-# Нужно задать абсолютный путь к центрам кластеров
 clust_centers_m = np.load('/indices/clust_centers.npy')
 app = Flask(__name__)
 
@@ -18,8 +17,8 @@ def get_data():
     # Обрабатываем JSON
     content_type = request.headers.get('Content-Type')
     if (content_type == 'application/json'):
-        json = request.json
-        query = json['query']
+        json_val = request.json
+        query = json_val['query']
 
         data = {
             "inputs":  [query],
