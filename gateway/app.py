@@ -1,7 +1,6 @@
 from flask import Flask, request, jsonify
 import requests
 import numpy as np
-import json
 
 # Загружаем индексы кластеров
 clust_centers_m = np.load('../dgs/dg_1/clust_centers.npy')
@@ -34,7 +33,16 @@ def get_data():
         cos_sims = u_v / (abs_u * abs_v)
         input_cluster = np.argmin(cos_sims)
 
-        return str(input_cluster)
+        resp = json.loads(
+            requests.post(
+                f'http://host.docker.internal:500{input_cluster}/get_best_from_k',
+                json={'emb':input_emb.tolist() }
+            ).text)
+
+        match = resp['best_match']
+        cluster = resp['cluster_id']
+
+        return jsonify(best_match=match, cluster=cluster)
     else:
         return 'Content-Type not supported! Please use JSON with \"query\" field.'
 
