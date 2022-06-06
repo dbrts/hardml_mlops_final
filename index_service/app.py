@@ -5,9 +5,9 @@ import json
 import joblib
 
 CLUSTER_ID = 3
-index = joblib.load(f'../dgs/dg_1/clust_{CLUSTER_ID}/index')
+index = joblib.load(f'indices/clust_{CLUSTER_ID}/index')
 
-with open(f'../dgs/dg_1/clust_{CLUSTER_ID}/sentences.json') as f:
+with open(f'indices/clust_{CLUSTER_ID}/sentences.json') as f:
     raw_sentences = json.load(f)
 
 app = Flask(__name__)
