@@ -22,7 +22,7 @@ def get_best_from_k():
 
 
 def get_neighbours(input_emb):
-    dists, neigh_ind = index.search(input_emb.reshape(1, -1), 30)
+    dists, neigh_ind = index.search(input_emb.reshape(1, -1), 20)
     neigh_ind = neigh_ind.flatten()
     neigh_emb = np.array([index.reconstruct(int(ind)) for
                           ind in neigh_ind], dtype='float32')
