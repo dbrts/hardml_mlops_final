@@ -28,7 +28,9 @@ def get_neighbours(input_emb):
                           ind in neigh_ind], dtype='float32')
     argmax_closest_emb = predict_match(neigh_emb)
     best_match_ind = neigh_ind[argmax_closest_emb]
+    # Если тут падает приложение взять вариант с str
     best_match_sentence = raw_sentences[best_match_ind]
+    # best_match_sentence = raw_sentences[str(best_match_ind)]
 
     return best_match_sentence
 
