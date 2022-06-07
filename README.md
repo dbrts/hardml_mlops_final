@@ -24,7 +24,7 @@
 Пример ответа:
 ```
 {
-   "best_match": "Has Ancient Japan been scientifically tested?",
+   "best_match": "Best match question",
    "cluster": "0"
 }
 ```
