@@ -31,8 +31,8 @@ def get_neighbours(input_emb):
 
     # Если тут падает приложение взять вариант с str
 
-    best_match_sentence = raw_sentences[best_match_ind]
-    # best_match_sentence = raw_sentences[str(best_match_ind)]
+    # best_match_sentence = raw_sentences[best_match_ind]
+    best_match_sentence = raw_sentences[str(best_match_ind)]
 
     return best_match_sentence
 

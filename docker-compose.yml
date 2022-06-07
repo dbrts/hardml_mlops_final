@@ -1,11 +1,18 @@
 version: '3.7'
 services:
+#  tf_serving:
+#    image: tensorflow/serving:2.2.0
+#    volumes:
+#      - "./use:/models/use"
+#    environment:
+#      MODEL_NAME: "use"
+#    ports:
+#      - "8501:8501"
+#    extra_hosts:
+#      - "host.docker.internal:host-gateway"
+  # Вместо USE модели заглушка которая возвращает псевдоэмбеддинги
   tf_serving:
-    image: tensorflow/serving:2.2.0
-    volumes:
-      - "./use:/models/use"
-    environment:
-      MODEL_NAME: "use"
+    image: tf_random
     ports:
       - "8501:8501"
     extra_hosts:
