@@ -45,4 +45,4 @@ docker stack deploy --compose-file docker-compose_remote.yml pairsstack
 8. А что с самими приложениями сервинга? Нет перегружен ли его запуск внешними зависимостями, правильно ли выключается и поднимается приложение. Существует способ быстро проверить здорово ли приложение?
 - Да, можно поднять его локально. Для этого есть docker-compose.yml и docker-compose_remote.yml. Для локального запуска нужен первый файл
 - Достаточно команд docker-compose build и docker-compose up. Все необходимое поднимется и можно слать запросы на gateway localhost:14005
-- Нужны папки /indices и /use - индексы и модель USE соответственно. Нужно распаковать архив upload.zip в корневую папку проекта
+- Нужны папки /indices и /use - индексы и модель USE соответственно. Нужно распаковать архив upload.zip в корневую папку проекта https://drive.google.com/file/d/1mXVCo-pavMUw3mlKbn4CBSE6wyqQw7D9/view?usp=sharing
