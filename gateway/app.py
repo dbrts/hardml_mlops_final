@@ -7,8 +7,8 @@ import numpy as np
 clust_centers_m = np.load('/indices/clust_centers.npy')
 app = Flask(__name__)
 
-# Параметры где поднят tensorflow embedding server
-host = '95.217.236.128'
+# Конфиги где поднят tensorflow embedding server
+host = 'host.docker.internal'
 port_rest = 8501
 model = 'use'
 

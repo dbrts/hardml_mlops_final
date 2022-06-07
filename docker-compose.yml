@@ -1,5 +1,16 @@
 version: '3.9'
 services:
+  tf_serving:
+    image: tensorflow/serving:2.2.0
+    volumes:
+      - "./use:/models/use"
+    environment:
+      MODEL_NAME: "use"
+    ports:
+      - "8501:8501"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
   gateway:
     image: gateway
     build: gateway/
