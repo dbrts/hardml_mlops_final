@@ -7,8 +7,8 @@ for host in root@95.217.236.128 root@95.217.239.216; do
     ssh $host "python /opt/project/scripts/update_centroids.py --new_dg $2 --cluster_id $3 "
 done
 
-# rolling update сервиса кластера
-ssh kc_2 "docker service update --force --update-parallelism 1 --update-delay 30s pairsstack_index_service_$3"
+# rolling update сервиса индекса кластера
+ssh root@95.217.239.216 "docker service update --force --update-parallelism 1 --update-delay 30s pairsstack_index_service_$3"
 
-# rolling update сервиса маршрутизатора
-ssh kc_2 "docker service update --force --update-parallelism 1 --update-delay 30s pairsstack_gateway"
+# rolling update сервиса gateway
+ssh root@95.217.239.216 "docker service update --force --update-parallelism 1 --update-delay 30s pairsstack_gateway"
